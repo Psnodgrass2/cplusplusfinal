@@ -20,6 +20,8 @@ namespace FinalProjectPart1 {
 	{
 	private:
 		cli::array<System::String^>^ htmlArray;
+		cli::array<System::String^>^ symbols;
+		cli::array<System::String^>^ entities;
 	public:
 		MyForm(void)
 		{
@@ -49,7 +51,30 @@ namespace FinalProjectPart1 {
 			htmlArray[20] = "<body><p>";
 			htmlArray[21] = "PlaceHolder Text";// Modify htmlArray11 to set the paragraph text
 			htmlArray[22] = "</p></body></html>";
+			symbols = gcnew cli::array<System::String^>(3);
+			symbols[0] = "&";
+			symbols[1] = "<";
+			symbols[2] = ">";
+			entities = gcnew cli::array<System::String^>(3);
+			symbols[0] = "&amp;";
+			symbols[1] = "&lt";
+			symbols[2] = "&gt";
 
+
+		}
+		String^ replaceSymbols(String^ input)
+		{
+			// Define a map of symbols and their corresponding HTML entities
+			
+			
+
+			// Replace symbols with HTML entities
+			for (int i = 0; i < symbols->Length; i++)
+			{
+				input = input->Replace(symbols[i], entities[i]);
+			}
+
+			return input;
 		}
 		void updateHTMLFile()
 		{
@@ -65,7 +90,8 @@ namespace FinalProjectPart1 {
 				}
 				else
 				{
-					htmlArray[18] = titleForm->Text;
+					String^ titleText = titleForm->Text;
+					htmlArray[18] = replaceSymbols(titleText);
 				}
 				if (paragraphForm->Text == "" || titleForm->Text == " ")
 				{
@@ -74,7 +100,11 @@ namespace FinalProjectPart1 {
 				else
 				{
 					String^ paragraphText = paragraphForm->Text;
+					paragraphText = paragraphText->Replace("&", "&amp;");
 					paragraphText = paragraphText->Replace("\n", "<br>");
+					paragraphText = paragraphText->Replace("<", "&lt;");
+					paragraphText = paragraphText->Replace(">", "&gt;");
+					
 					htmlArray[21] = paragraphText;
 				}
 
@@ -402,7 +432,10 @@ private: System::Windows::Forms::Label^ label2;
 				else
 				{
 					String^ paragraphText = paragraphForm->Text;
+					paragraphText = paragraphText->Replace("&", "");
 					paragraphText = paragraphText->Replace("\n", "<br>");
+					paragraphText = paragraphText->Replace("<", "&lt;");
+					paragraphText = paragraphText->Replace(">", "&gt;");
 					htmlArray[21] = paragraphText;
 				}
 

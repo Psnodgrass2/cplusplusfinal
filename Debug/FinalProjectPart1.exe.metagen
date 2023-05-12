@@ -18,4 +18,5 @@ Class FinalProjectPart1.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    replaceSymbols(String): PrivateScope, Public, HideBySig
     updateHTMLFile(): PrivateScope, Public, HideBySig

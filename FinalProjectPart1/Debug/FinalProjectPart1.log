@@ -1,2 +1,3 @@
-﻿  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  MyForm.cpp
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   FinalProjectPart1.vcxproj -> Q:\School\SDEV230\final p1\FinalProjectPart1\Debug\FinalProjectPart1.exe
