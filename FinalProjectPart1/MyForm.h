@@ -423,7 +423,8 @@ private: System::Windows::Forms::Label^ label2;
 				}
 				else
 				{
-					htmlArray[18] = titleForm->Text;
+					String^ titleText = titleForm->Text;
+					htmlArray[18] = replaceSymbols(titleText);
 				}
 				if (paragraphForm->Text == "" || titleForm->Text == " ")
 				{
@@ -432,10 +433,10 @@ private: System::Windows::Forms::Label^ label2;
 				else
 				{
 					String^ paragraphText = paragraphForm->Text;
-					paragraphText = paragraphText->Replace("&", "");
-					paragraphText = paragraphText->Replace("\n", "<br>");
+					paragraphText = paragraphText->Replace("&", "&amp;");
 					paragraphText = paragraphText->Replace("<", "&lt;");
 					paragraphText = paragraphText->Replace(">", "&gt;");
+					paragraphText = paragraphText->Replace("\n", "<br>");
 					htmlArray[21] = paragraphText;
 				}
 
