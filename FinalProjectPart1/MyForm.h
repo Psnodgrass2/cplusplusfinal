@@ -101,9 +101,9 @@ namespace FinalProjectPart1 {
 				{
 					String^ paragraphText = paragraphForm->Text;
 					paragraphText = paragraphText->Replace("&", "&amp;");
-					paragraphText = paragraphText->Replace("\n", "<br>");
 					paragraphText = paragraphText->Replace("<", "&lt;");
 					paragraphText = paragraphText->Replace(">", "&gt;");
+					paragraphText = paragraphText->Replace("\n", "<br>");
 					
 					htmlArray[21] = paragraphText;
 				}
