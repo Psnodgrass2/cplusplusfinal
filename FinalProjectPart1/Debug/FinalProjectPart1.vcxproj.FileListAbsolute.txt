@@ -1,0 +1,3 @@
+Q:\School\SDEV230\final p1\FinalProjectPart1\FinalProjectPart1\Debug\FinalProjectPart1.vcxproj.AssemblyReference.cache
+Q:\School\SDEV230\final p1\FinalProjectPart1\FinalProjectPart1\Debug\FinalProjectPart1.MyForm.resources
+Q:\School\SDEV230\final p1\FinalProjectPart1\FinalProjectPart1\Debug\FinalProjectPart1.vcxproj.GenerateResource.cache
