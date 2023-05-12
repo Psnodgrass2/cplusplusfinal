@@ -422,21 +422,24 @@ private: System::Windows::Forms::Label^ label2;
 					{
 						writer->WriteLine(htmlArray[i]);
 					}
-
+					displayLabel->Text = "File saved at: " + System::IO::Path::GetFullPath(fileName);
+					webBrowser1->Navigate(System::IO::Path::GetFullPath(fileName));
 
 					// Close the writer to flush and release the resources
 					writer->Close();
+					MessageBox::Show("Card created successfully!");
+
 				}
 				// Open the file for writing
 				
 
 				// Update the displayLabel text to show the file path
-				displayLabel->Text = "File saved at: " + System::IO::Path::GetFullPath(fileName);
+				
 
 				// Handle any exceptions that occur during the file writing process
 			
 			// Show a success message or perform any other actions
-			MessageBox::Show("Card created successfully!");
+			
 		}
 		catch (Exception^ ex)
 		{
